@@ -1,6 +1,6 @@
 {
     "name": "weight_balanced_tree",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "repo": "goodcleanfun/avl_tree/weight_balanced_tree",
     "description": "Generic α-weight balanced binary search tree",
     "keywords": ["tree", "weight balanced tree", "search tree", "binary search tree"],

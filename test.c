@@ -28,25 +28,25 @@ TEST test_weight_balanced_tree(void) {
     weight_balanced_tree_uint32_insert(tree, 7, "d");
     weight_balanced_tree_uint32_insert(tree, 9, "e");
 
-    char *a = weight_balanced_tree_uint32_search(tree->root, 1);
+    char *a = weight_balanced_tree_uint32_get(tree->root, 1);
     ASSERT_STR_EQ(a, "a");
 
-    char *b = weight_balanced_tree_uint32_search(tree->root, 3);
+    char *b = weight_balanced_tree_uint32_get(tree->root, 3);
     ASSERT_STR_EQ(b, "b");
 
-    char *c = weight_balanced_tree_uint32_search(tree->root, 5);
+    char *c = weight_balanced_tree_uint32_get(tree->root, 5);
     ASSERT_STR_EQ(c, "c");
 
-    char *d = weight_balanced_tree_uint32_search(tree->root, 7);
+    char *d = weight_balanced_tree_uint32_get(tree->root, 7);
     ASSERT_STR_EQ(d, "d");
 
-    char *e = weight_balanced_tree_uint32_search(tree->root, 9);
+    char *e = weight_balanced_tree_uint32_get(tree->root, 9);
     ASSERT_STR_EQ(e, "e");
 
     a = weight_balanced_tree_uint32_delete(tree, 1);
     ASSERT_STR_EQ(a, "a");
   
-    a = weight_balanced_tree_uint32_search(tree->root, 1);
+    a = weight_balanced_tree_uint32_get(tree->root, 1);
     ASSERT(a == NULL);
   
     b = weight_balanced_tree_uint32_delete(tree, 3);
@@ -55,7 +55,7 @@ TEST test_weight_balanced_tree(void) {
     e = weight_balanced_tree_uint32_delete(tree, 9);
     ASSERT_STR_EQ(e, "e");
 
-    c = weight_balanced_tree_uint32_search(tree->root, 5);
+    c = weight_balanced_tree_uint32_get(tree->root, 5);
     ASSERT_STR_EQ(c, "c");
 
     c = weight_balanced_tree_uint32_delete(tree, 5);
@@ -64,11 +64,11 @@ TEST test_weight_balanced_tree(void) {
     d = weight_balanced_tree_uint32_delete(tree, 7);
     ASSERT_STR_EQ(d, "d");
 
-    d = weight_balanced_tree_uint32_search(tree->root, 7);
+    d = weight_balanced_tree_uint32_get(tree->root, 7);
     ASSERT(d == NULL);
 
     weight_balanced_tree_uint32_insert(tree, 7, "d");
-    d = weight_balanced_tree_uint32_search(tree->root, 7);
+    d = weight_balanced_tree_uint32_get(tree->root, 7);
 
     weight_balanced_tree_uint32_destroy(tree);
     PASS();
